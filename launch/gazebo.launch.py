@@ -63,9 +63,9 @@ def generate_launch_description():
         executable='spawn_entity.py',
         arguments=['-topic', 'robot_description',
                    '-entity', 'ras_robot', # Nome da entidade no Gazebo
-                   '-x', '-3.0', # Posição inicial do robô (será sobrescrita pela pose no chassis.xacro se definida lá)
-                   '-y', '-2.2',
-                   '-z', '0.3', # Ajuste conforme necessário para que o robô não caia pelo chão antes da física estabilizar
+                   '-x', '0.0', # Posição inicial do robô (será sobrescrita pela pose no chassis.xacro se definida lá)
+                   '-y', '0.0',
+                   '-z', '0.0', # Ajuste conforme necessário para que o robô não caia pelo chão antes da física estabilizar
                    '-Y', '0.0'],
         output='screen'
     )

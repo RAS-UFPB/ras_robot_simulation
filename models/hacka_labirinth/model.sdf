@@ -1,7 +1,7 @@
 <?xml version='1.0'?>
 <sdf version='1.7'>
   <model name='hacka_labirinth'>
-    <pose>-5.64133 2.06828 0 0 -0 0</pose>
+    <static>true</static>
     <link name='Wall_10'>
       <collision name='Wall_10_Collision'>
         <geometry>

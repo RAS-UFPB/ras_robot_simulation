@@ -90,6 +90,7 @@
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
     <model name='hacka_labirinth'>
+      <static>true</static>
       <pose>-5.64133 2.06828 0 0 -0 0</pose>
       <link name='Wall_10'>
         <collision name='Wall_10_Collision'>

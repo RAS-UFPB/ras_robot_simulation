@@ -1,6 +1,7 @@
 <?xml version='1.0'?>
 <sdf version='1.7'>
   <model name='hacka_wall'>
+    <static>true</static>
     <pose>-5.10313 2.97109 0 0 -0 0</pose>
     <link name='Wall_174'>
       <collision name='Wall_174_Collision'>
