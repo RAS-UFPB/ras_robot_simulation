@@ -1,0 +1,24 @@
+# Exemplo APÓS a correção (no seu arquivo ros2_control.yaml)
+controller_manager:
+  ros__parameters:
+    update_rate: 100
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    roda_esquerda:
+      type: velocity_controllers/JointGroupVelocityController
+    roda_direita:
+      type: velocity_controllers/JointGroupVelocityController
+
+roda_esquerda:
+  ros__parameters:
+    joints: # Parâmetro 'joints' (plural) e é uma lista
+      - esquerda_roda_junta
+    # interface_name: velocity # Geralmente inferido para controladores de velocidade, mas pode ser adicionado se necessário
+
+roda_direita:
+  ros__parameters:
+    joints: # Parâmetro 'joints' (plural) e é uma lista
+      - direita_roda_junta
+    # interface_name: velocity # Geralmente inferido

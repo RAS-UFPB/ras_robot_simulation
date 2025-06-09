@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<sdf version='1.7'>
+  <world name='labirinth'>
+
+    <physics type="ode">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+    </physics>
+
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>-7 -3 1.6 0 0.26 0.2</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+
+    <scene>
+      <grid>true</grid>
+      <origin_visual>true</origin_visual>
+    </scene>
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <include>
+      <pose>3 2.25 0 0 0 0</pose>
+      <uri>model://labirinth</uri>
+    </include> 
+
+    <include>
+      <pose>0 0 0 0 0 0</pose>
+      <uri>model://walls</uri>
+    </include>
+
+    <model name="ground">
+      <static>true</static>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <plane>
+              <size>20 20</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.75 0.75 0.75 1</ambient>
+            <diffuse>0.75 0.75 0.75 1</diffuse>
+            <specular>0.75 0.75 0.75 1</specular>
+          </material>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <plane>
+              <size>20 20</size>
+            </plane>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+  </world>
+</sdf>
