@@ -61,22 +61,22 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        direita_lidar_link:
+        right_lidar_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        direita_roda_link:
+        right_roda_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        esquerda_lidar_link:
+        left_lidar_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        esquerda_roda_link:
+        left_roda_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false

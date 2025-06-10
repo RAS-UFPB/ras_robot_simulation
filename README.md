@@ -10,7 +10,7 @@ Este repositório contém um pacote de ROS 2 da simulação, utilizando o Gazebo
 
 ```bash
 cd ~/ros2_ws/src
-git clone https://github.com/RAS-UFPB/ras_robot_simulation.git
+git clone https://github.com/RAS-UFPB/robot_ras_ros.git
 ```
 
 2. Compile o workspace:
@@ -31,5 +31,5 @@ source install/setup.bash
 Para executar a simulação:
 
 ```bash
-ros2 launch ras_robot_simulation gazebo.launch.py
+ros2 launch robot_ras_ros gazebo.launch.py
 ```

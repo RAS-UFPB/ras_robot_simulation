@@ -9,7 +9,7 @@ from launch_ros.substitutions import FindPackageShare
 from launch.event_handlers import OnProcessExit
 
 def generate_launch_description():
-    pkg_share = FindPackageShare(package='ras_robot_simulation').find('ras_robot_simulation')
+    pkg_share = FindPackageShare(package='robot_ras_ros').find('robot_ras_ros')
     worlds_dir = os.path.join(pkg_share, 'worlds')
     default_world = 'labirinth.world'
     
@@ -22,7 +22,7 @@ def generate_launch_description():
     world_gazebo_path = PathJoinSubstitution([worlds_dir, LaunchConfiguration("world")])
     
     world_models_path = os.path.join(pkg_share, 'models')
-    install_dir = FindPackageShare(package='ras_robot_simulation').find('ras_robot_simulation')
+    install_dir = FindPackageShare(package='robot_ras_ros').find('robot_ras_ros')
 
     os.environ['GAZEBO_MODEL_PATH'] = world_models_path
     os.environ['GAZEBO_PLUGIN_PATH'] = os.environ.get('GAZEBO_PLUGIN_PATH', '') + ':' + install_dir + '/lib'
@@ -77,15 +77,12 @@ def generate_launch_description():
         output='screen'
     )
 
-    load_left_wheel_velocity_controller = ExecuteProcess(
-        cmd=['ros2', 'control', 'load_controller', '--set-state', 'active',
-             'roda_esquerda'],
+    load_left_wheel_controller = ExecuteProcess(
+        cmd=['ros2', 'control', 'load_controller', '--set-state', 'active', 'motor1'],
         output='screen'
     )
-
-    load_right_wheel_velocity_controller = ExecuteProcess(
-        cmd=['ros2', 'control', 'load_controller', '--set-state', 'active',
-             'roda_direita'],
+    load_right_wheel_controller = ExecuteProcess(
+        cmd=['ros2', 'control', 'load_controller', '--set-state', 'active', 'motor2'],
         output='screen'
     )
 
@@ -100,23 +97,14 @@ def generate_launch_description():
         robot_state_publisher_node,
         spawn_entity_node,
 
-        # Atrasar o carregamento dos controladores até o spawn_entity_node terminar
         RegisterEventHandler(
             event_handler=OnProcessExit(
                 target_action=spawn_entity_node,
-                on_exit=[load_joint_state_broadcaster],
-            )
-        ),
-        RegisterEventHandler(
-            event_handler=OnProcessExit(
-                target_action=load_joint_state_broadcaster,
-                on_exit=[load_left_wheel_velocity_controller],
-            )
-        ),
-        RegisterEventHandler(
-            event_handler=OnProcessExit(
-                target_action=load_left_wheel_velocity_controller,
-                on_exit=[load_right_wheel_velocity_controller],
+                on_exit=[
+                    load_joint_state_broadcaster,
+                    load_left_wheel_controller,
+                    load_right_wheel_controller,
+                ],
             )
         ),
     ])

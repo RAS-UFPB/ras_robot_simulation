@@ -60,8 +60,7 @@
                 </ray>
                 <plugin name="${prefix}_range_plugin" filename="libgazebo_ros_ray_sensor.so">
                     <ros>
-                        <namespace>/${prefix}</namespace>
-                        <remapping>~/out:=range</remapping>
+                        <remapping>~/out:=sensor_range/${prefix}</remapping>
                     </ros>
                     <frame_name>${prefix}_lidar_link</frame_name>
                     <output_type>sensor_msgs/Range</output_type>

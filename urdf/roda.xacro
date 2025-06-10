@@ -22,7 +22,7 @@
             </inertial>
         </link>
 
-        <joint name="${prefix}_roda_junta" type="continuous">
+        <joint name="${prefix}_wheel_joint" type="continuous">
             <parent link="${parent}"/>
             <child link="${prefix}_roda_link"/>
             <origin xyz="${pos_x_junta_roda} ${y_espelho * pos_y_junta_roda} ${pos_z_junta_roda}" rpy="0 0 0"/>
@@ -43,11 +43,9 @@
 
         <transmission name="${prefix}_roda_transmissao">
             <type>transmission_interface/SimpleTransmission</type>
-            <joint name="${prefix}_roda_junta">
-                <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+            <joint name="${prefix}_wheel_joint">
             </joint>
             <actuator name="${prefix}_roda_motor">
-                <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
                 <mechanicalReduction>1</mechanicalReduction>
             </actuator>
         </transmission>
