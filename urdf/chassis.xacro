@@ -24,7 +24,7 @@
         </link>
 
         <gazebo reference="base_link">
-            <material>Gazebo/Blue</material>
+            <material>Gazebo/SkyeBlue</material>
             <pose>0 0 ${origem_base_link_z_do_chao} 0 0 0</pose>
         </gazebo>
 
