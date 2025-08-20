@@ -66,6 +66,8 @@ def generate_launch_description():
                    '-x', '0.0', # Posição inicial do robô (será sobrescrita pela pose no chassis.xacro se definida lá)
                    '-y', '0.0',
                    '-z', '0.0', # Ajuste conforme necessário para que o robô não caia pelo chão antes da física estabilizar
+                   '-R', '0.0', # Ajuste conforme necessário para que o robô não caia pelo chão antes da física estabilizar
+                   '-P', '0.0', # Ajuste conforme necessário para que o robô não caia pelo chão antes da física estabilizar
                    '-Y', '0.0'],
         output='screen'
     )
