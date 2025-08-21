@@ -2020,7 +2020,7 @@
               <uri>file://media/materials/scripts/gazebo.material</uri>
               <name>Gazebo/Grey</name>
             </script>
-            <ambient>0 0 0 1</ambient>
+            <ambient>1 1 0 1</ambient>
           </material>
           <meta>
             <layer>0</layer>
@@ -2065,7 +2065,7 @@
               <uri>file://media/materials/scripts/gazebo.material</uri>
               <name>Gazebo/Grey</name>
             </script>
-            <ambient>0 0 0 1</ambient>
+            <ambient>1 1 0 1</ambient>
           </material>
           <meta>
             <layer>0</layer>
@@ -2110,7 +2110,7 @@
               <uri>file://media/materials/scripts/gazebo.material</uri>
               <name>Gazebo/Grey</name>
             </script>
-            <ambient>0 0 0 1</ambient>
+            <ambient>1 1 0 1</ambient>
           </material>
           <meta>
             <layer>0</layer>
@@ -2155,7 +2155,7 @@
               <uri>file://media/materials/scripts/gazebo.material</uri>
               <name>Gazebo/Grey</name>
             </script>
-            <ambient>0 0 0 1</ambient>
+            <ambient>1 1 0 1</ambient>
           </material>
           <meta>
             <layer>0</layer>
